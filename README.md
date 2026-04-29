@@ -20,7 +20,6 @@ Site institucional com sistema de agendamento online para barbearia — permite 
 ## 🔗 Acesso em Produção
 
 **➡️ [https://m4rcos-antonio.github.io/site-p1](https://m4rcos-antonio.github.io/site-p1)**  
-_(ou adicione aqui o link real de deploy)_
 
 ---
 
