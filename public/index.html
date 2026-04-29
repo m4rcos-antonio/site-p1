@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarberShop Premium - Barbearia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="6" cy="6" r="3"></circle>
+                        <circle cx="6" cy="18" r="3"></circle>
+                        <path d="M20 4v7a7 7 0 0 1-7 7H9"></path>
+                    </svg>
+                    <span class="logo-text">BarberShop Premium</span>
+                </div>
+                <nav class="nav-desktop">
+                    <a href="#inicio" class="nav-link">Início</a>
+                    <a href="#servicos" class="nav-link">Serviços</a>
+                    <a href="#sobre" class="nav-link">Sobre</a>
+                    <a href="#contato" class="nav-link">Contato</a>
+                </nav>
+                <a href="agendar.html" class="btn btn-primario">Agendar</a>
+            </div>
+        </div>
+    </header>
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-texto">
+                    <h1 class="hero-titulo">Estilo e <span class="destaque">Tradição</span></h1>
+                    <p class="hero-descricao">
+                        Há mais de 15 anos oferecendo os melhores serviços de barbearia com profissionais qualificados e ambiente acolhedor.
+                    </p>
+                    <div class="hero-botoes">
+                        <a href="agendar.html" class="btn btn-primario btn-grande">
+                            <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="1"></circle>
+                                <path d="M12 1v6m0 6v6"></path>
+                                <path d="M4.22 4.22l4.24 4.24m5.08 5.08l4.24 4.24"></path>
+                            </svg>
+                            Agendar Horário
+                        </a>
+                        <button class="btn btn-contorno" onclick="document.getElementById('servicos').scrollIntoView({behavior: 'smooth'})">
+                            Ver Serviços
+                        </button>
+                    </div>
+                    <div class="hero-estatisticas">
+                        <div class="stars">
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            <svg class="star" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                        </div>
+                        <p class="stats-texto">+500 clientes satisfeitos</p>
+                    </div>
+                </div>
+                <div class="hero-imagem">
+                    <img src="https://images.unsplash.com/photo-1754294437661-129b86f868ea?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXJiZXJzaG9wJTIwaW50ZXJpb3IlMjBtb2Rlcm58ZW58MXx8fHwxNzc2MzMzODQ5fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Interior da barbearia" class="img-arredondada">
+                    <div class="badge-experiencia">
+                        <p class="badge-numero">15+</p>
+                        <p class="badge-texto">Anos de experiência</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="servicos" class="servicos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-titulo">Nossos Serviços</h2>
+                <p class="section-subtitulo">Qualidade e profissionalismo em cada atendimento</p>
+            </div>
+            <div class="grid-servicos" id="container-servicos">
+                <div class="loading">Carregando serviços...</div>
+            </div>
+        </div>
+    </section>
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <div class="sobre-content">
+                <div class="sobre-imgs">
+                    <img src="https://images.unsplash.com/photo-1768363446104-b8a0c1716600?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXJiZXIlMjBjdXR0aW5nJTIwaGFpciUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzYzMzM4NTB8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Barbeiro profissional" class="img-arredondada">
+                    <img src="https://images.unsplash.com/photo-1678356163587-6bb3afb89679?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXJiZXJzaG9wJTIwdG9vbHMlMjBzY2lzc29yc3xlbnwxfHx8fDE3NzYzNDAwMTF8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Ferramentas de barbearia" class="img-arredondada">
+                </div>
+                <div class="sobre-texto">
+                    <h2 class="section-titulo">Sobre Nós</h2>
+                    <p class="sobre-paragrafo">
+                        Somos uma barbearia tradicional que combina técnicas clássicas com as tendências mais modernas. Nossa equipe é formada por profissionais altamente qualificados e apaixonados pelo que fazem.
+                    </p>
+                    <p class="sobre-paragrafo">
+                        Acreditamos que cada cliente merece uma experiência única, por isso oferecemos um atendimento personalizado em um ambiente acolhedor e sofisticado.
+                    </p>
+                    <div class="sobre-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="feature-titulo">Profissionais Qualificados</h4>
+                                <p class="feature-texto">Equipe treinada e certificada</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="6" cy="6" r="3"></circle>
+                                    <circle cx="6" cy="18" r="3"></circle>
+                                    <path d="M20 4v7a7 7 0 0 1-7 7H9"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="feature-titulo">Equipamentos Modernos</h4>
+                                <p class="feature-texto">Tecnologia de ponta para melhores resultados</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contato" class="contato">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-titulo">Entre em Contato</h2>
+                <p class="section-subtitulo">Visite-nos ou agende seu horário</p>
+            </div>
+            <div class="grid-contato">
+                <div class="card-contato">
+                    <div class="icon-contato">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="contato-titulo">Telefone</h3>
+                    <p class="contato-texto">(11) 98765-4321</p>
+                </div>
+                <div class="card-contato">
+                    <div class="icon-contato">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                    </div>
+                    <h3 class="contato-titulo">Endereço</h3>
+                    <p class="contato-texto">Av. Paulista, 1000 - SP</p>
+                </div>
+                <div class="card-contato">
+                    <div class="icon-contato">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                    </div>
+                    <h3 class="contato-titulo">E-mail</h3>
+                    <p class="contato-texto">contato@barbershop.com.br</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-texto">&copy; 2026 BarberShop Premium. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
