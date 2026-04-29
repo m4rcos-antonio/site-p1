@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendar Horário - BarberShop Premium</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html" class="btn-voltar">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                    </a>
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="6" cy="6" r="3"></circle>
+                        <circle cx="6" cy="18" r="3"></circle>
+                        <path d="M20 4v7a7 7 0 0 1-7 7H9"></path>
+                    </svg>
+                    <span class="logo-text">BarberShop Premium</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="pagina-agendamento">
+        <div class="container">
+            <div class="agendamento-header">
+                <h1 class="agendamento-titulo">Agendar Horário</h1>
+                <p class="agendamento-subtitulo">Horário de atendimento: Segunda a Sábado, 9h às 18h</p>
+            </div>
+            <div id="mensagem-sucesso" class="alert alert-sucesso" style="display: none;">
+                <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <div>
+                    <h2 class="alert-titulo">Agendamento Confirmado!</h2>
+                    <p class="alert-mensagem">Seu horário foi reservado com sucesso.</p>
+                    <p class="alert-submensagem">Redirecionando para página inicial...</p>
+                </div>
+            </div>
+            <form id="agendamento-form" class="agendamento-form">
+                <div id="mensagem-erro" class="alert alert-erro" style="display: none;">
+                    <svg class="alert-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                    <p id="erro-texto"></p>
+                </div>
+                <div class="form-secao">
+                    <label class="form-label">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="6" cy="6" r="3"></circle>
+                            <circle cx="6" cy="18" r="3"></circle>
+                            <path d="M20 4v7a7 7 0 0 1-7 7H9"></path>
+                        </svg>
+                        Escolha o Serviço
+                    </label>
+                    <div class="selecao-servicos" id="container-servicos">
+                        <div class="loading">Carregando serviços...</div>
+                    </div>
+                </div>
+                <div class="form-secao">
+                    <label class="form-label">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        Escolha a Data
+                    </label>
+                    <div class="selecao-datas" id="container-datas">
+                        <div class="loading">Carregando datas...</div>
+                    </div>
+                </div>
+                <div class="form-secao" id="secao-horarios" style="display: none;">
+                    <label class="form-label">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        Escolha o Horário
+                    </label>
+                    <div class="selecao-horarios" id="container-horarios"></div>
+                    <p class="horarios-nota" id="horarios-nota" style="display: none;">* Horários em cinza já estão reservados</p>
+                </div>
+                <div class="form-secao">
+                    <label class="form-label">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        Seus Dados
+                    </label>
+                    <div class="form-grupo">
+                        <label for="nome" class="form-campo-label">Nome Completo</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite seu nome completo"
+                            class="form-campo"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+                    <div class="form-grupo">
+                        <label for="telefone" class="form-campo-label">Telefone</label>
+                        <input
+                            type="tel"
+                            id="telefone"
+                            name="telefone"
+                            placeholder="(11) 98765-4321"
+                            class="form-campo"
+                            autocomplete="tel"
+                            maxlength="15"
+                            required
+                        >
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primario btn-grande btn-bloco">
+                    <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                    Confirmar Agendamento
+                </button>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-texto">&copy; 2026 BarberShop Premium. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    <script src="js/agendar.js"></script>
+</body>
+</html>
